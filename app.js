@@ -54,6 +54,7 @@ module.exports = app;
 
 var mongoose = require('mongoose')
 mongoose.Promise = bluebird
-mongoose.connect('mongodb://127.0.0.1:27017/todoapp')
-.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://127.0.0.1:27017/todoapp`)})
-.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017/todoapp`)})
+//mongoose.connect('mongodb://127.0.0.1:27017/todoapp')
+mongoose.connect(process.env.MONGODB_URI)
+.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : ${process.env.MONGODB_URI}`)})
+.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : ${process.env.MONGODB_URI}`)})
