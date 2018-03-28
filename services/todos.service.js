@@ -24,6 +24,7 @@ exports.getTodos = async function(query, page, limit){
     } catch (e) {
 
         // return a Error message describing the reason 
+        console.log(e);
         throw Error('Error while Paginating Todos')
     }
 }
