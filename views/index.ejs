@@ -13,15 +13,13 @@
 
 <body>
   <%- include('nav') %>
-    <div class="container-fluid" style="padding-top: 10px">
+    <div class="container" style="padding-top: 10px">
       <div class="row">
         <div class="col-lg-12">
           <!-- <h1 class="text-center">
             <%= appTitle %>
           </h1> -->
-          <h4 class="text-center">Welcome to
-            <%= appTitle %>
-              </p>
+          <h4 class="text-center">Welcome!</h4>
         </div>
       </div>
       <%if (status === true) { %>
@@ -32,15 +30,7 @@
             </div>
           </div>
         </div>
-        <% } else { %>
-          <div class="row">
-              <div class="col-lg-12">
-                <div class="alert alert-info" role="alert">
-                  Add a Todo item below!
-                </div>
-              </div>
-            </div>
-          <% } %>
+        <% } %>
           <div class="row">
             <div class="col-lg-12">
               <%- include('addtodo') %>

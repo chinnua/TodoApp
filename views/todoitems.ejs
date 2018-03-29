@@ -1,29 +1,13 @@
-<table class="table table-bordered table-hover table-sm">
-    <thead class="thead-light">
-        <tr>
-            <th>Title</th>
-            <th>Date Created</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for(var i=0; i < listTodos.length; i++) { %>
-            <tr>
-                <td style="width: 60%">
+<ul class="list-group list-group-flush">
+    <% for(var i=0; i < listTodos.length; i++) { %>
+        <li class="list-group-item">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="<%= listTodos[i]._id %>">
+                <label class="custom-control-label" style="width: 100%" for="<%= listTodos[i]._id %>">
                     <%= listTodos[i].title %>
-                </td>
-                <td style="width: 20%">
-                    <%= listTodos[i].date.toDateString() %>
-                </td>
-                <td style="width: 15%">
-                    <%= listTodos[i].status %>
-                </td>
-                <td class="text-center" style="width: 5%">
-                    <i class="far fa-edit"></i>
-                    <i class="far fa-trash-alt"></i>
-                </td>
-            </tr>
-            <% } %>
-    </tbody>
-</table>
+                    <span class="float-right"><i class="far fa-trash-alt"></i></span>
+                </label>
+            </div>
+        </li>
+        <% } %>
+</ul>

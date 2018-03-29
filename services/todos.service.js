@@ -46,7 +46,7 @@ exports.createTodo = async function(todo){
 
         return savedTodo;
     }catch(e){
-      
+        console.log(e);
         // return a Error message describing the reason     
         throw Error("Error while Creating Todo")
     }

@@ -3,6 +3,7 @@ var mongoosePaginate = require('mongoose-paginate')
 
 
 var ToDoSchema = new mongoose.Schema({
+    id: String,
     title: String,
     description: String,
     date: Date,
