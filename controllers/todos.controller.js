@@ -66,7 +66,7 @@ exports.updateTodo = async function(req, res, next){
 
     var id = req.body._id;
 
-    console.log(req.body)
+    //console.log(req.body)
 
     var todo = {
         id,

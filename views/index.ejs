@@ -89,6 +89,33 @@
             }
           }
         });
+      };
+
+      function toggleStatus(checkbox) {
+        var status = "Pending";
+        //console.log(checkbox.id);
+        if (checkbox.checked) {
+          status = "Completed"
+        }
+        fetch('/update', {
+            method: 'put',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              'id': checkbox.id,
+              'status': status
+            })
+          })
+          .then(res => {
+            if (res.ok) {
+              window.location = window.location.href;
+              return res;
+            }
+          }).
+        then(data => {
+          window.location = window.location.href;
+        })
 
       };
     </script>

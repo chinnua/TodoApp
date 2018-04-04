@@ -6,7 +6,6 @@ var ToDoSchema = new mongoose.Schema({
     id: String,
     title: String,
     description: String,
-    date: Date,
     status: String
 })
 

@@ -25,7 +25,7 @@ exports.getTodos = async function(query, page, limit){
     } catch (e) {
 
         // return a Error message describing the reason 
-        console.log(e);
+        //console.log(e);
         throw Error('Error while Paginating Todos')
     }
 }
@@ -37,7 +37,7 @@ exports.createTodo = async function(todo){
         title: todo.title,
         description: todo.description,
         date: new Date(),
-        status: todo.status
+        status: "Pending"
     })
 
     try{
@@ -69,15 +69,15 @@ exports.updateTodo = async function(todo){
         return false;
     }
 
-    console.log(oldTodo)
+    //console.log(oldTodo)
 
     //Edit the Todo Object
-    oldTodo.title = todo.title
-    oldTodo.description = todo.description
+    //oldTodo.title = todo.title
+    //oldTodo.description = todo.description
     oldTodo.status = todo.status
 
 
-    console.log(oldTodo)
+    //console.log(oldTodo)
 
     try{
         var savedTodo = await oldTodo.save()

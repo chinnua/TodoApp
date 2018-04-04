@@ -46,13 +46,17 @@ router.delete('/delete', function (req, res, next) {
   });
 });
 
-// router.put('/', function (req, res, next) {
-//   TodoService.updateTodo(req.body.id).then(function (d) {
-//     var promise = TodoService.getTodos({}, 1, 100);
-//     promise.then(function (data) {
-//       res.render('index', { appTitle: 'Todo App', status: true, listTodos: data.docs });
-//     });
-//   });
-// });
+router.put('/update', function (req, res, next) {
+  var todo = {
+    id: req.body.id,
+    status: req.body.status
+  }
+  TodoService.updateTodo(todo).then(function (d) {
+    var promise = TodoService.getTodos({}, 1, 100);
+    promise.then(function (data) {
+      res.render('index', { appTitle: 'Todo App', status: true, listTodos: data.docs });
+    });
+  });
+});
 
 module.exports = router;
