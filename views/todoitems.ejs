@@ -2,11 +2,11 @@
     <% for(var i=0; i < listTodos.length; i++) { %>
         <li class="list-group-item">
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="<%= listTodos[i]._id %>">
-                <label class="custom-control-label" style="width: 100%" for="<%= listTodos[i]._id %>">
+                <input type="checkbox" class="custom-control-input" id="<%= listTodos[i]._id %>" onclick="toggleStatus(this);">
+                <label class="custom-control-label" style="width: 95%" for="<%= listTodos[i]._id %>">
                     <%= listTodos[i].title %>
-                    <span class="float-right"><i class="far fa-trash-alt"></i></span>
                 </label>
+                <span class="float-right" style="cursor: pointer"><i class="far fa-trash-alt" onclick="deleteTodo('<%= listTodos[i]._id %>');"></i></span>
             </div>
         </li>
         <% } %>

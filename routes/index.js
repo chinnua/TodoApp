@@ -37,4 +37,22 @@ router.post('/', function (req, res, next) {
   });
 });
 
+router.delete('/delete', function (req, res, next) {
+  TodoService.deleteTodo(req.body.id).then(function (d) {
+    var promise = TodoService.getTodos({}, 1, 100);
+    promise.then(function (data) {
+      res.render('index', { appTitle: 'Todo App', status: true, listTodos: data.docs });
+    });
+  });
+});
+
+// router.put('/', function (req, res, next) {
+//   TodoService.updateTodo(req.body.id).then(function (d) {
+//     var promise = TodoService.getTodos({}, 1, 100);
+//     promise.then(function (data) {
+//       res.render('index', { appTitle: 'Todo App', status: true, listTodos: data.docs });
+//     });
+//   });
+// });
+
 module.exports = router;

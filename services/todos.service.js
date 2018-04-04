@@ -1,5 +1,6 @@
 // Gettign the Newly created Mongoose Model we just created 
 var ToDo = require('../models/todo.model')
+const mongoose = require('mongoose');
 
 // Saving the context of this module inside the _the variable
 _this = this
@@ -91,11 +92,12 @@ exports.deleteTodo = async function(id){
     // Delete the Todo
     try{
         var deleted = await ToDo.remove({_id: id})
-        if(deleted.result.n === 0){
-            throw Error("Todo Could not be deleted")
-        }
+        //if(deleted.result.n === 0){
+        //    throw Error("Todo Could not be deleted")
+        //}
         return deleted
     }catch(e){
-        throw Error("Error Occured while Deleting the Todo")
+        console.log(e);
+        throw Error("Error Occured while Deleting the Todo with Id:" + id);
     }
 }
