@@ -5,7 +5,7 @@
                 <% let checked = listTodos[i].status ==="Completed" ? "checked" : "" %>
                 <input type="checkbox" class="custom-control-input" id="<%= listTodos[i]._id %>" onclick="toggleStatus(this);" <%= checked %>>
                 
-                <label class="custom-control-label" style="width: 95%" for="<%= listTodos[i]._id %>">
+                <label class="custom-control-label" style="width: 90%" for="<%= listTodos[i]._id %>">
                     <%= listTodos[i].title %>
                 </label>
                 <span class="float-right" style="cursor: pointer"><i class="far fa-trash-alt" onclick="deleteTodo('<%= listTodos[i]._id %>');"></i></span>
